@@ -1,3 +1,5 @@
+import { useRouter } from "next/router";
+
 const data = [
   {
     id: 1,
@@ -9,9 +11,20 @@ const data = [
 ];
 
 export default function Home() {
+  const router = useRouter();
   return (
     <div>
       <p className="text-center font-bold text-xl my-10">Бие даалт</p>
+      <div className="flex items-center justify-center">
+        <button
+          className="border rounded-lg bg-gray-200 p-4 font-bold mb-2 hover:bg-blue-200"
+          onClick={() => {
+            router.push("week");
+          }}
+        >
+          Week ruu shiljine
+        </button>
+      </div>
       <div className="flex items-center flex-col space-y-4 border rounde-lg mx-20">
         <p className="font-semibold my-4">Шаардлага:</p>
         <li>UI/UX design (10 оноо)</li>
